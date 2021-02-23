@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Set the character movement speed
+// Set the character movement speed
 
 public class CharController : MonoBehaviour
 {
+
+    private bool jumpKeyWasPressed;
     public float movementSpeed = 40f;
 
     // Start is called before the first frame update
@@ -21,5 +23,23 @@ public class CharController : MonoBehaviour
         float vMovement = Input.GetAxis("Vertical") * movementSpeed;
 
         transform.Translate(new Vector3(hMovement, 0, vMovement) * Time.deltaTime);
+
+        // Check if space key is pressed down
+        if (Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            // Debug.Log("Space Key Was Pressed Down");
+            jumpKeyWasPressed = true;
+        }
+    }
+
+    // FixedUpdate is called once every physic update
+    private void FixedUpdate()
+    {
+        if (jumpKeyWasPressed)
+        {
+            // Debug.Log("Space Key Was Pressed Down");
+            GetComponent<Rigidbody>().AddForce(Vector3.up * 10, ForceMode.VelocityChange);
+            jumpKeyWasPressed = false;
+        }
     }
 }

@@ -597,7 +597,7 @@ MonoBehaviour:
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 25
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -1992,6 +1992,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 671265631}
     m_Modifications:
+    - target: {fileID: 1378327901069847230, guid: 6f912cbcddee78f4a8e3bcd3ce4e820f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1496137793473344204, guid: 6f912cbcddee78f4a8e3bcd3ce4e820f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -397
@@ -5659,7 +5663,9 @@ MonoBehaviour:
     - Press SpaceBar to gain altitude
 
     -
-    WASD to move around'
+    WASD to move around
+
+    - Use mouse to look around'
 --- !u!222 &1647529830
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6125,6 +6131,7 @@ GameObject:
   - component: {fileID: 1826551055}
   - component: {fileID: 1826551057}
   - component: {fileID: 1826551056}
+  - component: {fileID: 1826551058}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -6197,6 +6204,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1826551058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826551054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d66d71db54e3674c9800cb0beab0c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1835301549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6253912963739180298, guid: 6f912cbcddee78f4a8e3bcd3ce4e820f, type: 3}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Set the character movement speed
 
@@ -9,13 +10,18 @@ public class CharController : MonoBehaviour
     //[SerializedField] private Transform groundCheckTransform = null;
     private bool jumpKeyWasPressed;
     public float movementSpeed = 40f;
+    public int scoreValue;
+    Text score;
+
+    public object ScoreScript { get; private set; }
+
     //private Rigidbody rigidbodyComponent;
     //private bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -32,6 +38,7 @@ public class CharController : MonoBehaviour
             // Debug.Log("Space Key Was Pressed Down");
             jumpKeyWasPressed = true;
         }
+
     }
 
     // FixedUpdate is called once every physic update
@@ -65,5 +72,16 @@ public class CharController : MonoBehaviour
     //{
     //    isGrounded = false;
     //}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            Destroy(other.gameObject);
+            //cloudsDestroyed++;
+            ScoreScript.scoreValue += 1;
+            score.text = "Clouds Destroyed: " + scoreValue;
+        }
+    }
 
 }

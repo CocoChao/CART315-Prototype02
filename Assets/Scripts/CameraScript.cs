@@ -7,7 +7,7 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     Vector2 rotation = new Vector2(0, 0);
-    public float speed = 3;
+    public float speed = 1;
 
     // Start is called before the first frame update
     void Start()
